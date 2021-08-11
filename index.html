@@ -1,239 +1,723 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>La Glycine</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bellota+Text:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bellota+Text:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        h1 {
-            font-family: 'Bellota Text', cursive;
-            font-size: 500%;
-            margin-bottom: -0.01em;
-        }
-        .center {
-            text-align: center;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-        }
-        #text_field {
-            display: flex;
-            flex-direction: column;
-        }
-        .back {
-            border: none;
-            background-color: white;
-            cursor: pointer;
-        }
-        .languages {
-            border: 0.25em solid gray;
-            border-radius: 0.5em;
-            background-color: whitesmoke;
-            font-family: 'Bellota Text', cursive;
-            font-weight: 700;
-            font-size: large;
-            margin: 2em;
-            padding: 0.5em;
-            width: 6.9em;
-            height: 3.5em;
-            cursor: pointer;
-        }
-        p {
-            font-family: 'Bellota Text', cursive;
-            margin: 3em;
-            text-align: justify;
-            text-justify: inter-word;
-        }
+      h1 {
+        font-family: "Bellota Text", cursive;
+        font-size: 500%;
+        margin-bottom: -0.01em;
+      }
+      h4 {
+        font-family: "Bellota Text", cursive;
+        margin-top: -1.5em;
+        margin-left: 3em;
+        margin-right: 3em;
+        text-align: center;
+      }
+      .center {
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+      }
+      #text_field {
+        display: flex;
+        flex-direction: column;
+      }
+      .back-button {
+        margin-left: 1.5em;
+        margin-top: 3em;
+        margin-bottom: -1.5em;
+      }
+      .back {
+        border: none;
+        background-color: white;
+        cursor: pointer;
+      }
+      .languages {
+        border: 0.25em solid gray;
+        border-radius: 0.5em;
+        background-color: whitesmoke;
+        font-family: "Bellota Text", cursive;
+        font-weight: 700;
+        font-size: large;
+        margin: 2em;
+        padding: 0.5em;
+        width: 6.9em;
+        height: 3.5em;
+        cursor: pointer;
+      }
+      p {
+        font-family: "Bellota Text", cursive;
+        margin: 3em;
+        text-align: justify;
+        text-justify: inter-word;
+      }
+      iframe {
+        margin-right: 3em;
+        margin-left: 3em;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="center">
-        <h1>La Glycine</h1>
+      <h1>La Glycine</h1>
     </div>
-    <div id="text_field">
+    <div id="text_field"></div>
+
+    <div id="buttons" style="display: none">
+      <div class="center">
+        <button class="languages" type="button" onclick="show('english')">
+          ENGLISH
+        </button>
+        <button class="languages" type="button" onclick="show('french')">
+          FRANÇAIS
+        </button>
+        <button class="languages" type="button" onclick="show('german')">
+          DEUTSCH
+        </button>
+        <button class="languages" type="button" onclick="show('italian')">
+          ITALIANO
+        </button>
+        <button class="languages" type="button" onclick="show('spanish')">
+          ESPANHOL
+        </button>
+        <button class="languages" type="button" onclick="show('portuguese')">
+          PORTUGUES
+        </button>
+        <button class="languages" type="button" onclick="show('russian')">
+          РУССКИЙ ЯЗЫК
+        </button>
+        <button class="languages" type="button" onclick="show('arabic')">
+          عربى
+        </button>
+        <button class="languages" type="button" onclick="show('mandarin')">
+          中文
+        </button>
+      </div>
     </div>
 
-    <div id=buttons style="display:none">
-        <div class="center">
-            <button class="languages" type="button" onclick="show('english')">ENGLISH</button>
-            <button class="languages" type="button" onclick="show('french')">FRANÇAIS</button>
-            <button class="languages" type="button" onclick="show('german')">DEUTSCH</button>
-            <button class="languages" type="button" onclick="show('italian')">ITALIANO</button>
-            <button class="languages" type="button" onclick="show('spanish')">ESPANHOL</button>
-            <button class="languages" type="button" onclick="show('portuguese')">PORTUGUES</button>
-            <button class="languages" type="button" onclick="show('russian')">РУССКИЙ ЯЗЫК</button>
-            <button class="languages" type="button" onclick="show('arabic')">عربى</button>
-            <button class="languages" type="button" onclick="show('mandarin')">中文</button>
-        </div>
-    </div>
-    
-    <div id=english style="display:none">
-        <button class="back" type="button" onclick="show('buttons')"><span class="material-icons" style="font-size: xx-large;">arrow_back</span></button>
-        <p>
-            <a href="img/ACV_GB14c3-010362 GRANGE.jpg" target="_blank">This house<span class="material-icons" style="font-size: small;">open_in_new</span></a>, a Grade III listed building, appears in the <a href="img/ACV_GB14c3-010362.jpg" target="_blank">oldest Cantonal Plans available<span class="material-icons" style="font-size: small;">open_in_new</span></a> (1620) and can therefore realistically be dated back to the 16th century.
-            <br/>
-            <br/>
-            Later plans (<a href="img/ACV_GB-010364.jpg" target="_blank">1795<span class="material-icons" style="font-size: small;">open_in_new</span></a>) make special mention of an <a href="img/ACV_GB-010364 FOUR.jpg" target="_blank">oven<span class="material-icons" style="font-size: small;">open_in_new</span></a> existing in this house, a fact which was apparently not so common, potentially making it a hub for the rural community which inhabited these lands.
-            <br/>
-            <br/>
-            In the 1940’s the house was owned by Swiss <a href="img/Robert Piguet Un Prince de la Mode.pdf" target="_blank">fashion designer<span class="material-icons" style="font-size: small;">open_in_new</span></a> <a href="https://en.wikipedia.org/wiki/Robert_Piguet" target="_blank">Robert Piguet<span class="material-icons" style="font-size: small;">open_in_new</span></a>, a master who was, among others, the teacher of Christian Dior, Pierre Balmain and Hubert de Givenchy in Paris (<a href="https://youtu.be/8qdvmmt-A-o" target="_blank">a short documentary about the house, in French<span class="material-icons" style="font-size: small;">open_in_new</span></a>).
-            <br/>
-            <br/>
-            The house has been owned since the last century by the Ambrosi de Magistris Verzier family, whose motto is “Ad altiora vocamur” (‘to higher things we are called’), a reminder for the family members to engage into higher things rather than being caught in the drudgery of daily life, dedicating their energies towards seeking more enriching human and spiritual rewards.
-        </p>
-    </div>
-    
-    <div id=french style="display:none">
-        <button class="back" type="button" onclick="show('buttons')"><span class="material-icons" style="font-size: xx-large;">arrow_back</span></button>
-        <p>
-            <a href="img/ACV_GB14c3-010362 GRANGE.jpg" target="_blank">Cette maison<span class="material-icons" style="font-size: small;">open_in_new</span></a>, monument historique classé III, apparaît dans les <a href="img/ACV_GB14c3-010362.jpg" target="_blank">plus anciens plans cantonaux disponibles<span class="material-icons" style="font-size: small;">open_in_new</span></a> (1620) et peut donc être datée de façon réaliste au XVIe siècle.
-            <br/>
-            <br/>
-            Des plans ultérieurs (<a href="img/ACV_GB-010364.jpg" target="_blank">1795<span class="material-icons" style="font-size: small;">open_in_new</span></a>) font mention d'un <a href="img/ACV_GB-010364 FOUR.jpg" target="_blank">four<span class="material-icons" style="font-size: small;">open_in_new</span></a> existant dans cette maison, un fait qui n'était apparemment pas si courant, ce qui en fit potentiellement une plaque tournante pour la communauté rurale qui habitait ces terres.
-            <br/>
-            <br/>
-            Dans les années 1940, la maison appartint au <a href="img/Robert Piguet Un Prince de la Mode.pdf" target="_blank">créateur de mode<span class="material-icons" style="font-size: small;">open_in_new</span></a> suisse <a href="https://fr.wikipedia.org/wiki/Robert_Piguet" target="_blank">Robert Piguet<span class="material-icons" style="font-size: small;">open_in_new</span></a>, un maître qui fut, entre autres, le professeur de Christian Dior, Pierre Balmain et Hubert de Givenchy à Paris (<a href="https://youtu.be/8qdvmmt-A-o" target="_blank">un court documentaire sur la maison, en français<span class="material-icons" style="font-size: small;">open_in_new</span></a>).
-            <br/>
-            <br/>
-            La maison appartient depuis le siècle dernier à la famille Ambrosi de Magistris Verzier, dont la devise est "Ad altiora vocamur" ("aux choses supérieures, nous sommes appelés"), un rappel pour les membres de la famille de s'engager à accomplir des actes significatifs plutôt que de se laisser prendre dans les corvées de la vie quotidienne, en consacrant leurs énergies à la recherche de récompenses humaines et spirituelles plus enrichissantes.
-        </p>    
-    </div>
-    
-    <div id=german style="display:none">
-        <button class="back" type="button" onclick="show('buttons')"><span class="material-icons" style="font-size: xx-large;">arrow_back</span></button>
-        <p>
-            <a href="img/ACV_GB14c3-010362 GRANGE.jpg" target="_blank">Dieses Haus<span class="material-icons" style="font-size: small;">open_in_new</span></a> erscheint in den <a href="img/ACV_GB14c3-010362.jpg" target="_blank">ältesten verfügbaren, kantonalen Plänen<span class="material-icons" style="font-size: small;">open_in_new</span></a> (1620) und kann daher realistischerweise auf das 17. Jahrhundert zurückdatiert werden.
-            <br/>
-            <br/>
-            In späteren Plänen (<a href="img/ACV_GB-010364.jpg" target="_blank">1795<span class="material-icons" style="font-size: small;">open_in_new</span></a>) wird ein in diesem Haus vorhandener <a href="img/ACV_GB-010364 FOUR.jpg" target="_blank">Ofen<span class="material-icons" style="font-size: small;">open_in_new</span></a> besonders hervorgehoben – ein Einrichtungsmerkmal, das anscheinend nicht sehr häufig vorkam, und welches das Haus möglicherweise zu einem Treffpunkt für die ländliche Gemeinschaft machte, die diese Ländereien bewohnte.
-            <br/>
-            <br/>
-            In den 1940er Jahren gehörte das Haus dem Schweizer <a href="img/Robert Piguet Un Prince de la Mode.pdf" target="_blank">Modeschöpfer<span class="material-icons" style="font-size: small;">open_in_new</span></a> <a href="https://de.wikipedia.org/wiki/Robert_Piguet" target="_blank">Robert Piguet<span class="material-icons" style="font-size: small;">open_in_new</span></a>, einem Meister, der unter anderem Christian Dior, Pierre Balmain und Hubert de Givenchy in Paris lehrte (<a href="https://youtu.be/8qdvmmt-A-o" target="_blank">eine kurze Reportage über das Haus auf Französisch<span class="material-icons" style="font-size: small;">open_in_new</span></a>).
-            <br/>
-            <br/>
-            Seit dem letzten Jahrhundert befindet sich das Haus im Besitz der Familie Ambrosi de Magistris Verzier. Ihr Motto lautet "Ad altiora vocamur" ("zu Höherem werden wir gerufen"), eine Erinnerung an die Familienmitglieder, sich sinnhaften Aufgaben zuzuwenden, anstatt sich lediglich in der Plackerei des täglichen Lebens zu verlieren, und ihre Energien der Suche nach menschlich und spirituell bereichernden Vorhaben zu widmen.
-        </p>    
-    </div>
-    
-    <div id=italian style="display:none">
-        <button class="back" type="button" onclick="show('buttons')"><span class="material-icons" style="font-size: xx-large;">arrow_back</span></button>
-        <p>
-            <a href="img/ACV_GB14c3-010362 GRANGE.jpg" target="_blank">Questa casa<span class="material-icons" style="font-size: small;">open_in_new</span></a> compare nei <a href="img/ACV_GB14c3-010362.jpg" target="_blank">piu’ antichi piani catastali disponibili<span class="material-icons" style="font-size: small;">open_in_new</span></a> (del 1620) e  la sua costruzione puo’ quindi realisticamente datarsi al 16esimo secolo.
-            <br/>
-            <br/>
-            Dei piani succcessivi (<a href="img/ACV_GB-010364.jpg" target="_blank">1795<span class="material-icons" style="font-size: small;">open_in_new</span></a>) fanno menzione specifica dell’esistenza di un <a href="img/ACV_GB-010364 FOUR.jpg" target="_blank">forno<span class="material-icons" style="font-size: small;">open_in_new</span></a> in questa casa, fatto apparentemente non molto comune e che potenzialmente ne faceva un centro di aggregazione per le comunità rurali della zona.
-            <br/>
-            <br/>
-            Negli anni ’40 la casa appartenne allo <a href="img/Robert Piguet Un Prince de la Mode.pdf" target="_blank">stilista<span class="material-icons" style="font-size: small;">open_in_new</span></a> svizzero <a href="https://it.wikipedia.org/wiki/Robert_Piguet" target="_blank">Robert Piguet<span class="material-icons" style="font-size: small;">open_in_new</span></a> il quale fu, tra gli altri, maestro di Christian Dior, Pierre Balmain e Hubert de Givenchy a Parigi (<a href="https://youtu.be/8qdvmmt-A-o" target="_blank">un breve documentario sulla casa di Piguet, in francese<span class="material-icons" style="font-size: small;">open_in_new</span></a>).
-            <br/>
-            <br/>
-            Questa casa è di proprietà dal secolo scorso della famiglia Ambrosi de Magistris Verzier, il cui motto è « Ad altiora vocamur » (a cose piu’ elevate siamo chiamati), un’esortazione a tutti i suoi membri a non lasciarsi trascinare nel vortice delle meschinità quotidiane ma piuttosto a dedicarsi alla ricerca di ricompense umane e spirituali piu’ gratificanti.
-        </p>    
-    </div>
-    
-    <div id=spanish style="display:none">
-        <button class="back" type="button" onclick="show('buttons')"><span class="material-icons" style="font-size: xx-large;">arrow_back</span></button>
-        <p>
-            <a href="img/ACV_GB14c3-010362 GRANGE.jpg" target="_blank">Esta casa<span class="material-icons" style="font-size: small;">open_in_new</span></a> aparece en los <a href="img/ACV_GB14c3-010362.jpg" target="_blank">planos cantonales más antiguos disponibles<span class="material-icons" style="font-size: small;">open_in_new</span></a> (1620) y, por lo tanto, puede datarse realisticamente en el siglo XVI.
-            <br/>
-            <br/>
-            Planos posteriores (<a href="img/ACV_GB-010364.jpg" target="_blank">1795<span class="material-icons" style="font-size: small;">open_in_new</span></a>) hacen mención especial a un <a href="img/ACV_GB-010364 FOUR.jpg" target="_blank">horno<span class="material-icons" style="font-size: small;">open_in_new</span></a> existente en esta casa, un hecho que aparentemente no era tan común, lo que podría convertirlo en un centro para la comunidad rural que habitaba estas tierras.
-            <br/>
-            <br/>
-            En la década de 1940, la casa era propiedad del <a href="img/Robert Piguet Un Prince de la Mode.pdf" target="_blank">diseñador de moda<span class="material-icons" style="font-size: small;">open_in_new</span></a> suizo <a href="https://en.wikipedia.org/wiki/Robert_Piguet" target="_blank">Robert Piguet<span class="material-icons" style="font-size: small;">open_in_new</span></a>, un maestro que era, entre otros, el maestro de Christian Dior, Pierre Balmain y Hubert de Givenchy en París (<a href="https://youtu.be/8qdvmmt-A-o" target="_blank">un pequenho documental sobre la casa, en francés<span class="material-icons" style="font-size: small;">open_in_new</span></a>).
-            <br/>
-            <br/>
-            Desde el siglo pasado,  la casa ha sido propiedad de la familia Ambrosi de Magistris Verzier, cuyo lema es "Ad altiora vocamur" ("a las cosas superiores que nos llaman"). Supone un recordatorio para que los miembros de la familia se involucren en diferentes proyectos en lugar de ser atrapados en la rutina de la vida diaria, dedicando sus energías a buscar experiencias humanas y espirituales más enriquecedoras.
-        </p>    
-    </div>
-    
-    <div id=portuguese style="display:none">
-        <button class="back" type="button" onclick="show('buttons')"><span class="material-icons" style="font-size: xx-large;">arrow_back</span></button>
-        <p>
-            <a href="img/ACV_GB14c3-010362 GRANGE.jpg" target="_blank">Esta casa<span class="material-icons" style="font-size: small;">open_in_new</span></a> aparece nas <a href="img/ACV_GB14c3-010362.jpg" target="_blank">plantas cantonais mais antigos<span class="material-icons" style="font-size: small;">open_in_new</span></a> (1620) que se encontram disponíveis e por isto de maneira realística pode ser datada do século 16.
-            <br/>
-            <br/>
-            Plantas posteriores (<a href="img/ACV_GB-010364.jpg" target="_blank">1795<span class="material-icons" style="font-size: small;">open_in_new</span></a>) trazem consigo menção especial de um <a href="img/ACV_GB-010364 FOUR.jpg" target="_blank">fogão<span class="material-icons" style="font-size: small;">open_in_new</span></a> existente na casa, fato este aparentemente incomum, o que potencialmente faz desta casa, uma referência central para a comunidade rural que abitava estas terras.
-            <br/>
-            <br/>
-            Nos anos 40 do século XX, a casa foi propriedade de um <a href="img/Robert Piguet Un Prince de la Mode.pdf" target="_blank">designer de moda<span class="material-icons" style="font-size: small;">open_in_new</span></a> Suíço, <a href="https://en.wikipedia.org/wiki/Robert_Piguet" target="_blank">Robert Piguet<span class="material-icons" style="font-size: small;">open_in_new</span></a>, um mestre que foi professor, entre outros, de Christian Dior, Pierre Balmain e Hubert de Givenchy em Paris (<a href="https://youtu.be/8qdvmmt-A-o" target="_blank">um pequeno documentário sobre a casa, em francês<span class="material-icons" style="font-size: small;">open_in_new</span></a>).
-            <br/>
-            <br/>
-            A casa tem sido propriedade, desde o último século,  da família Ambrosi de Magistris Verzier, que tem como máxima “Ad altiora vocamur” (“às maiores coisas somos chamados” ), uma lembrança aos membros da família a se engajarem em maiores coisas ao invés de se entregarem a mediocridade do trabalho habitual, dedicando as suas energias a busca de ricas recompensa humanas e espirituais.
-        </p>    
-    </div>
-    
-    <div id=russian style="display:none">
-        <button class="back" type="button" onclick="show('buttons')"><span class="material-icons" style="font-size: xx-large;">arrow_back</span></button>
-        <p>
-            <a href="img/ACV_GB14c3-010362 GRANGE.jpg" target="_blank">Этот дом<span class="material-icons" style="font-size: small;">open_in_new</span></a> упоминается в <a href="img/ACV_GB14c3-010362.jpg" target="_blank">самых старых имеющихся кантональных планах<span class="material-icons" style="font-size: small;">open_in_new</span></a> (1620 г.) и, следовательно, может быть реально датирован 16-м веком, либо ранее.
-            <br/>
-            <br/>
-            В более поздних планах (<a href="img/ACV_GB-010364.jpg" target="_blank">1795 г.<span class="material-icons" style="font-size: small;">open_in_new</span></a>) особо упоминается <a href="img/ACV_GB-010364 FOUR.jpg" target="_blank">печь<span class="material-icons" style="font-size: small;">open_in_new</span></a>, существующая в этом доме, факт, который, по-видимому, был не столь распространенным, что давало возможность сделать его центром местной сельской общины.
-            <br/>
-            <br/>
-            В 1940-х годах дом принадлежал <a href="img/Robert Piguet Un Prince de la Mode.pdf" target="_blank">швейцарскому модельеру<span class="material-icons" style="font-size: small;">open_in_new</span></a> <a href="https://en.wikipedia.org/wiki/Robert_Piguet" target="_blank">Роберту Пиге<span class="material-icons" style="font-size: small;">open_in_new</span></a>. Он был известным мастером, и, кроме всего прочего, учителем Кристиана  Диор, Пьера Бальмена и Убера де Живанши в Париже (<a href="https://youtu.be/8qdvmmt-A-o" target="_blank">короткий документальный фильм о доме, на французском языке прилагается<span class="material-icons" style="font-size: small;">open_in_new</span></a>).
-            <br/>
-            <br/>
-            С конца прошлого века домом владеет семья Амбрози де Магистриса Верзье, девизом которой является «Ad altiora vocamur» («призываемые к высокому»), он напоминает членам семьи о том, чтобы они в суете повседневных трудов и забот не забывали отдавать свою энергию и силы служению высокому и прекрасному.
-        </p>    
-    </div>
-    
-    <div id=arabic style="display:none">
-        <button class="back" type="button" onclick="show('buttons')"><span class="material-icons" style="font-size: xx-large;">arrow_back</span></button>
-        <p dir="rtl">
-            وبالتالي يمكن أن يعود تاريخه إلى القرن ، (1620) يظهر <a href="img/ACV_GB14c3-010362 GRANGE.jpg" target="_blank">هذا المنزل<span class="material-icons" style="font-size: small;">open_in_new</span></a> في <a href="img/ACV_GB14c3-010362.jpg" target="_blank">أقدم الخطط الكانتونية المتاحة<span class="material-icons" style="font-size: small;">open_in_new</span></a> ، السادس عشر
-            <br/>
-            <br/>
-            موجود في هذا المنزل ، وهي حقيقة لم تكن شائعة جدًا ، بشكل خاص إلى <a href="img/ACV_GB-010364 FOUR.jpg" target="_blank">فرن<span class="material-icons" style="font-size: small;">open_in_new</span></a> (<a href="img/ACV_GB-010364.jpg" target="_blank">1795<span class="material-icons" style="font-size: small;">open_in_new</span></a>) تشير الخطط اللاحقة مما يجعلها مركزًا للمجتمع الريفي الذي سكن هذه الأراضي
-            <br/>
-            <br/>
-            وهو سيد كان ، <a href="https://en.wikipedia.org/wiki/Robert_Piguet" target="_blank">روبرت بيجيه<span class="material-icons" style="font-size: small;">open_in_new</span></a> في الأربعينيات من القرن العشرين ، كان المنزل مملوكًا <a href="img/Robert Piguet Un Prince de la Mode.pdf" target="_blank"> لمصمم الأزياء<span class="material-icons" style="font-size: small;">open_in_new</span></a> السويسري ، من بين آخرين ، مدرس كريستيان ديور وبيير بالمين وهوبرت دي جيفنشي في باريس (<a href="https://youtu.be/8qdvmmt-A-o" target="_blank">فيلم وثائقي قصير عن المنزل باللغة الفرنسية<span class="material-icons" style="font-size: small;">open_in_new</span></a>).
-            <br/>
-            <br/>
-            تم امتلاك المنزل منذ القرن الماضي من قبل عائلة 
-            <br/>
-            Ambrosi de Magistris Verzier
-            <br/>
-            وشعارها هو ،
-            <br/>
-            "Ad altiora vocamur"
-            <br/>
-            ("للأشياء الأعلى التي نطلق عليها") 
-            <br/>
-            وهو تذكير لأفراد العائلة للانخراط في أشياء أعلى بدلاً من أن يكونوا عالقون في كدح في الحياة اليومية ، ،
-            يكرسون طاقاتهم نحو السعي إلى مكافآت إنسانية وروحية أكثر إثراء
-
-        </p>    
+    <div id="english" style="display: none">
+      <div class="back-button">
+        <button class="back" type="button" onclick="show('buttons')">
+          <span class="material-icons" style="font-size: xx-large"
+            >arrow_back</span
+          >
+        </button>
+      </div>
+      <p>
+        <a href="img/ACV_GB14c3-010362 GRANGE.jpg" target="_blank"
+          >This house<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >, a Grade III listed building, appears in the
+        <a href="img/ACV_GB14c3-010362.jpg" target="_blank"
+          >oldest Cantonal Plans available<span
+            class="material-icons"
+            style="font-size: small"
+            >open_in_new</span
+          ></a
+        >
+        (1620) and can therefore realistically be dated back to the 16th
+        century.
+        <br />
+        <br />
+        Later plans (<a href="img/ACV_GB-010364.jpg" target="_blank"
+          >1795<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >) make special mention of an
+        <a href="img/ACV_GB-010364 FOUR.jpg" target="_blank"
+          >oven<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >
+        existing in this house, a fact which was apparently not so common,
+        potentially making it a hub for the rural community which inhabited
+        these lands.
+        <br />
+        <br />
+        In the 1940’s the house was owned by Swiss
+        <a href="img/Robert Piguet Un Prince de la Mode.pdf" target="_blank"
+          >fashion designer<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >
+        <a href="https://en.wikipedia.org/wiki/Robert_Piguet" target="_blank"
+          >Robert Piguet<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >, a master who was, among others, the teacher of Christian Dior, Pierre
+        Balmain and Hubert de Givenchy in Paris.
+        <br />
+        <br />
+        The house has been owned since the last century by the Ambrosi de
+        Magistris Verzier family, whose motto is “Ad altiora vocamur” (‘to
+        higher things we are called’), a reminder for the family members to
+        engage into higher things rather than being caught in the drudgery of
+        daily life, dedicating their energies towards seeking more enriching
+        human and spiritual rewards.
+      </p>
+      <h4>A short documentary about the house, in French</h4>
+      <iframe src="https://www.youtube.com/embed/8qdvmmt-A-o"> </iframe>
     </div>
 
-    <div id=mandarin style="display:none">
-        <button class="back" type="button" onclick="show('buttons')"><span class="material-icons" style="font-size: xx-large;">arrow_back</span></button>
-        <p>
-            <a href="img/ACV_GB14c3-010362 GRANGE.jpg" target="_blank">这座房子<span class="material-icons" style="font-size: small;">open_in_new</span></a>出现在<a href="img/ACV_GB14c3-010362.jpg" target="_blank">最古老的州计划<span class="material-icons" style="font-size: small;">open_in_new</span></a>（1620年）中，因此实际上可以追溯到16世纪。
-            <br/>
-            <br/>
-            后来的计划（<a href="img/ACV_GB-010364.jpg" target="_blank">1795年<span class="material-icons" style="font-size: small;">open_in_new</span></a>）特别提到了这所房子中已有的 <a href="img/ACV_GB-010364 FOUR.jpg" target="_blank">烤箱<span class="material-icons" style="font-size: small;">open_in_new</span></a> ，这在当时非常少见，有可能使其成为居住在这些土地上的农村社区的枢纽。
-            <br/>
-            <br/>
-            在1940年代，这所房子由瑞士时装<a href="img/Robert Piguet Un Prince de la Mode.pdf" target="_blank">设计师<span class="material-icons" style="font-size: small;">open_in_new</span></a> <a href="https://en.wikipedia.org/wiki/Robert_Piguet" target="_blank">罗伯特·皮格<span class="material-icons" style="font-size: small;">open_in_new</span></a>（Robert Piguet）拥有，大师是克里斯蒂安·迪奥（Christian Dior），皮埃尔·巴尔曼（Pierre Balmain）和休伯特·纪梵希（Hubert de Givenchy）在巴黎的老师（<a href="https://youtu.be/8qdvmmt-A-o" target="_blank">有关房屋的简短纪录片，法语<span class="material-icons" style="font-size: small;">open_in_new</span></a>）。
-            <br/>
-            <br/>
-            该房子自上世纪以来一直由Ambrosi de Magistris Verzier家族拥有，其座右铭是 “Ad altiora vocamur”（“我们被更高的使命所召唤”），这提醒家庭成员不要被日常生活的苦恼困扰，去积极寻求更富有意义的人类精神生活。
-        </p>    
+    <div id="french" style="display: none">
+      <div class="back-button">
+        <button class="back" type="button" onclick="show('buttons')">
+          <span class="material-icons" style="font-size: xx-large"
+            >arrow_back</span
+          >
+        </button>
+      </div>
+      <p>
+        <a href="img/ACV_GB14c3-010362 GRANGE.jpg" target="_blank"
+          >Cette maison<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >, monument historique classé III, apparaît dans les
+        <a href="img/ACV_GB14c3-010362.jpg" target="_blank"
+          >plus anciens plans cantonaux disponibles<span
+            class="material-icons"
+            style="font-size: small"
+            >open_in_new</span
+          ></a
+        >
+        (1620) et peut donc être datée de façon réaliste au XVIe siècle.
+        <br />
+        <br />
+        Des plans ultérieurs (<a href="img/ACV_GB-010364.jpg" target="_blank"
+          >1795<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >) font mention d'un
+        <a href="img/ACV_GB-010364 FOUR.jpg" target="_blank"
+          >four<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >
+        existant dans cette maison, un fait qui n'était apparemment pas si
+        courant, ce qui en fit potentiellement une plaque tournante pour la
+        communauté rurale qui habitait ces terres.
+        <br />
+        <br />
+        Dans les années 1940, la maison appartint au
+        <a href="img/Robert Piguet Un Prince de la Mode.pdf" target="_blank"
+          >créateur de mode<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >
+        suisse
+        <a href="https://fr.wikipedia.org/wiki/Robert_Piguet" target="_blank"
+          >Robert Piguet<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >, un maître qui fut, entre autres, le professeur de Christian Dior,
+        Pierre Balmain et Hubert de Givenchy à Paris.
+        <br />
+        <br />
+        La maison appartient depuis le siècle dernier à la famille Ambrosi de
+        Magistris Verzier, dont la devise est "Ad altiora vocamur" ("aux choses
+        supérieures, nous sommes appelés"), un rappel pour les membres de la
+        famille de s'engager à accomplir des actes significatifs plutôt que de
+        se laisser prendre dans les corvées de la vie quotidienne, en consacrant
+        leurs énergies à la recherche de récompenses humaines et spirituelles
+        plus enrichissantes.
+      </p>
+      <h4>Un court documentaire sur la maison, en français</h4>
+      <iframe src="https://www.youtube.com/embed/8qdvmmt-A-o"> </iframe>
     </div>
-    
-      <script>
-              document.body.onload = show('buttons');
-        function show(param_div_id) {
-          document.getElementById('text_field').innerHTML = document.getElementById(param_div_id).innerHTML;
-        }
-      </script>
-    </body>
+
+    <div id="german" style="display: none">
+      <div class="back-button">
+        <button class="back" type="button" onclick="show('buttons')">
+          <span class="material-icons" style="font-size: xx-large"
+            >arrow_back</span
+          >
+        </button>
+      </div>
+      <p>
+        <a href="img/ACV_GB14c3-010362 GRANGE.jpg" target="_blank"
+          >Dieses Haus<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >
+        erscheint in den
+        <a href="img/ACV_GB14c3-010362.jpg" target="_blank"
+          >ältesten verfügbaren, kantonalen Plänen<span
+            class="material-icons"
+            style="font-size: small"
+            >open_in_new</span
+          ></a
+        >
+        (1620) und kann daher realistischerweise auf das 17. Jahrhundert
+        zurückdatiert werden.
+        <br />
+        <br />
+        In späteren Plänen (<a href="img/ACV_GB-010364.jpg" target="_blank"
+          >1795<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >) wird ein in diesem Haus vorhandener
+        <a href="img/ACV_GB-010364 FOUR.jpg" target="_blank"
+          >Ofen<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >
+        besonders hervorgehoben – ein Einrichtungsmerkmal, das anscheinend nicht
+        sehr häufig vorkam, und welches das Haus möglicherweise zu einem
+        Treffpunkt für die ländliche Gemeinschaft machte, die diese Ländereien
+        bewohnte.
+        <br />
+        <br />
+        In den 1940er Jahren gehörte das Haus dem Schweizer
+        <a href="img/Robert Piguet Un Prince de la Mode.pdf" target="_blank"
+          >Modeschöpfer<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >
+        <a href="https://de.wikipedia.org/wiki/Robert_Piguet" target="_blank"
+          >Robert Piguet<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >, einem Meister, der unter anderem Christian Dior, Pierre Balmain und
+        Hubert de Givenchy in Paris lehrte.
+        <br />
+        <br />
+        Seit dem letzten Jahrhundert befindet sich das Haus im Besitz der
+        Familie Ambrosi de Magistris Verzier. Ihr Motto lautet "Ad altiora
+        vocamur" ("zu Höherem werden wir gerufen"), eine Erinnerung an die
+        Familienmitglieder, sich sinnhaften Aufgaben zuzuwenden, anstatt sich
+        lediglich in der Plackerei des täglichen Lebens zu verlieren, und ihre
+        Energien der Suche nach menschlich und spirituell bereichernden Vorhaben
+        zu widmen.
+      </p>
+      <h4>Eine kurze Reportage über das Haus auf Französisch</h4>
+      <iframe src="https://www.youtube.com/embed/8qdvmmt-A-o"> </iframe>
+    </div>
+
+    <div id="italian" style="display: none">
+      <div class="back-button">
+        <button class="back" type="button" onclick="show('buttons')">
+          <span class="material-icons" style="font-size: xx-large"
+            >arrow_back</span
+          >
+        </button>
+      </div>
+      <p>
+        <a href="img/ACV_GB14c3-010362 GRANGE.jpg" target="_blank"
+          >Questa casa<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >
+        compare nei
+        <a href="img/ACV_GB14c3-010362.jpg" target="_blank"
+          >piu’ antichi piani catastali disponibili<span
+            class="material-icons"
+            style="font-size: small"
+            >open_in_new</span
+          ></a
+        >
+        (del 1620) e la sua costruzione puo’ quindi realisticamente datarsi al
+        16esimo secolo.
+        <br />
+        <br />
+        Dei piani succcessivi (<a href="img/ACV_GB-010364.jpg" target="_blank"
+          >1795<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >) fanno menzione specifica dell’esistenza di un
+        <a href="img/ACV_GB-010364 FOUR.jpg" target="_blank"
+          >forno<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >
+        in questa casa, fatto apparentemente non molto comune e che
+        potenzialmente ne faceva un centro di aggregazione per le comunità
+        rurali della zona.
+        <br />
+        <br />
+        Negli anni ’40 la casa appartenne allo
+        <a href="img/Robert Piguet Un Prince de la Mode.pdf" target="_blank"
+          >stilista<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >
+        svizzero
+        <a href="https://it.wikipedia.org/wiki/Robert_Piguet" target="_blank"
+          >Robert Piguet<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >
+        il quale fu, tra gli altri, maestro di Christian Dior, Pierre Balmain e
+        Hubert de Givenchy a Parigi.
+        <br />
+        <br />
+        Questa casa è di proprietà dal secolo scorso della famiglia Ambrosi de
+        Magistris Verzier, il cui motto è « Ad altiora vocamur » (a cose piu’
+        elevate siamo chiamati), un’esortazione a tutti i suoi membri a non
+        lasciarsi trascinare nel vortice delle meschinità quotidiane ma
+        piuttosto a dedicarsi alla ricerca di ricompense umane e spirituali piu’
+        gratificanti.
+      </p>
+      <h4>Un breve documentario sulla casa di Piguet, in francese</h4>
+      <iframe src="https://www.youtube.com/embed/8qdvmmt-A-o"> </iframe>
+    </div>
+
+    <div id="spanish" style="display: none">
+      <div class="back-button">
+        <button class="back" type="button" onclick="show('buttons')">
+          <span class="material-icons" style="font-size: xx-large"
+            >arrow_back</span
+          >
+        </button>
+      </div>
+      <p>
+        <a href="img/ACV_GB14c3-010362 GRANGE.jpg" target="_blank"
+          >Esta casa<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >
+        aparece en los
+        <a href="img/ACV_GB14c3-010362.jpg" target="_blank"
+          >planos cantonales más antiguos disponibles<span
+            class="material-icons"
+            style="font-size: small"
+            >open_in_new</span
+          ></a
+        >
+        (1620) y, por lo tanto, puede datarse realisticamente en el siglo XVI.
+        <br />
+        <br />
+        Planos posteriores (<a href="img/ACV_GB-010364.jpg" target="_blank"
+          >1795<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >) hacen mención especial a un
+        <a href="img/ACV_GB-010364 FOUR.jpg" target="_blank"
+          >horno<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >
+        existente en esta casa, un hecho que aparentemente no era tan común, lo
+        que podría convertirlo en un centro para la comunidad rural que habitaba
+        estas tierras.
+        <br />
+        <br />
+        En la década de 1940, la casa era propiedad del
+        <a href="img/Robert Piguet Un Prince de la Mode.pdf" target="_blank"
+          >diseñador de moda<span
+            class="material-icons"
+            style="font-size: small"
+            >open_in_new</span
+          ></a
+        >
+        suizo
+        <a href="https://en.wikipedia.org/wiki/Robert_Piguet" target="_blank"
+          >Robert Piguet<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >, un maestro que era, entre otros, el maestro de Christian Dior, Pierre
+        Balmain y Hubert de Givenchy en París.
+        <br />
+        <br />
+        Desde el siglo pasado, la casa ha sido propiedad de la familia Ambrosi
+        de Magistris Verzier, cuyo lema es "Ad altiora vocamur" ("a las cosas
+        superiores que nos llaman"). Supone un recordatorio para que los
+        miembros de la familia se involucren en diferentes proyectos en lugar de
+        ser atrapados en la rutina de la vida diaria, dedicando sus energías a
+        buscar experiencias humanas y espirituales más enriquecedoras.
+      </p>
+      <h4>Un pequenho documental sobre la casa, en francés</h4>
+      <iframe src="https://www.youtube.com/embed/8qdvmmt-A-o"> </iframe>
+    </div>
+
+    <div id="portuguese" style="display: none">
+      <div class="back-button">
+        <button class="back" type="button" onclick="show('buttons')">
+          <span class="material-icons" style="font-size: xx-large"
+            >arrow_back</span
+          >
+        </button>
+      </div>
+      <p>
+        <a href="img/ACV_GB14c3-010362 GRANGE.jpg" target="_blank"
+          >Esta casa<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >
+        aparece nas
+        <a href="img/ACV_GB14c3-010362.jpg" target="_blank"
+          >plantas cantonais mais antigos<span
+            class="material-icons"
+            style="font-size: small"
+            >open_in_new</span
+          ></a
+        >
+        (1620) que se encontram disponíveis e por isto de maneira realística
+        pode ser datada do século 16.
+        <br />
+        <br />
+        Plantas posteriores (<a href="img/ACV_GB-010364.jpg" target="_blank"
+          >1795<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >) trazem consigo menção especial de um
+        <a href="img/ACV_GB-010364 FOUR.jpg" target="_blank"
+          >fogão<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >
+        existente na casa, fato este aparentemente incomum, o que potencialmente
+        faz desta casa, uma referência central para a comunidade rural que
+        abitava estas terras.
+        <br />
+        <br />
+        Nos anos 40 do século XX, a casa foi propriedade de um
+        <a href="img/Robert Piguet Un Prince de la Mode.pdf" target="_blank"
+          >designer de moda<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >
+        Suíço,
+        <a href="https://en.wikipedia.org/wiki/Robert_Piguet" target="_blank"
+          >Robert Piguet<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >, um mestre que foi professor, entre outros, de Christian Dior, Pierre
+        Balmain e Hubert de Givenchy em Paris.
+        <br />
+        <br />
+        A casa tem sido propriedade, desde o último século, da família Ambrosi
+        de Magistris Verzier, que tem como máxima “Ad altiora vocamur” (“às
+        maiores coisas somos chamados” ), uma lembrança aos membros da família a
+        se engajarem em maiores coisas ao invés de se entregarem a mediocridade
+        do trabalho habitual, dedicando as suas energias a busca de ricas
+        recompensa humanas e espirituais.
+      </p>
+      <h4>Um pequeno documentário sobre a casa, em francês</h4>
+      <iframe src="https://www.youtube.com/embed/8qdvmmt-A-o"> </iframe>
+    </div>
+
+    <div id="russian" style="display: none">
+      <div class="back-button">
+        <button class="back" type="button" onclick="show('buttons')">
+          <span class="material-icons" style="font-size: xx-large"
+            >arrow_back</span
+          >
+        </button>
+      </div>
+      <p>
+        <a href="img/ACV_GB14c3-010362 GRANGE.jpg" target="_blank"
+          >Этот дом<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >
+        упоминается в
+        <a href="img/ACV_GB14c3-010362.jpg" target="_blank"
+          >самых старых имеющихся кантональных планах<span
+            class="material-icons"
+            style="font-size: small"
+            >open_in_new</span
+          ></a
+        >
+        (1620 г.) и, следовательно, может быть реально датирован 16-м веком,
+        либо ранее.
+        <br />
+        <br />
+        В более поздних планах (<a href="img/ACV_GB-010364.jpg" target="_blank"
+          >1795 г.<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >) особо упоминается
+        <a href="img/ACV_GB-010364 FOUR.jpg" target="_blank"
+          >печь<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >, существующая в этом доме, факт, который, по-видимому, был не столь
+        распространенным, что давало возможность сделать его центром местной
+        сельской общины.
+        <br />
+        <br />
+        В 1940-х годах дом принадлежал
+        <a href="img/Robert Piguet Un Prince de la Mode.pdf" target="_blank"
+          >швейцарскому модельеру<span
+            class="material-icons"
+            style="font-size: small"
+            >open_in_new</span
+          ></a
+        >
+        <a href="https://en.wikipedia.org/wiki/Robert_Piguet" target="_blank"
+          >Роберту Пиге<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >. Он был известным мастером, и, кроме всего прочего, учителем Кристиана
+        Диор, Пьера Бальмена и Убера де Живанши в Париже.
+        <br />
+        <br />
+        С конца прошлого века домом владеет семья Амбрози де Магистриса Верзье,
+        девизом которой является «Ad altiora vocamur» («призываемые к
+        высокому»), он напоминает членам семьи о том, чтобы они в суете
+        повседневных трудов и забот не забывали отдавать свою энергию и силы
+        служению высокому и прекрасному.
+      </p>
+      <h4>
+        Короткий документальный фильм о доме, на французском языке прилагается
+      </h4>
+      <iframe src="https://www.youtube.com/embed/8qdvmmt-A-o"> </iframe>
+    </div>
+
+    <div id="arabic" style="display: none">
+      <div class="back-button">
+        <button class="back" type="button" onclick="show('buttons')">
+          <span class="material-icons" style="font-size: xx-large"
+            >arrow_back</span
+          >
+        </button>
+      </div>
+      <p dir="rtl">
+        وبالتالي يمكن أن يعود تاريخه إلى القرن ، (1620) يظهر
+        <a href="img/ACV_GB14c3-010362 GRANGE.jpg" target="_blank"
+          >هذا المنزل<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >
+        في
+        <a href="img/ACV_GB14c3-010362.jpg" target="_blank"
+          >أقدم الخطط الكانتونية المتاحة<span
+            class="material-icons"
+            style="font-size: small"
+            >open_in_new</span
+          ></a
+        >
+        ، السادس عشر
+        <br />
+        <br />
+        موجود في هذا المنزل ، وهي حقيقة لم تكن شائعة جدًا ، بشكل خاص إلى
+        <a href="img/ACV_GB-010364 FOUR.jpg" target="_blank"
+          >فرن<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >
+        (<a href="img/ACV_GB-010364.jpg" target="_blank"
+          >1795<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >) تشير الخطط اللاحقة مما يجعلها مركزًا للمجتمع الريفي الذي سكن هذه
+        الأراضي
+        <br />
+        <br />
+        وهو سيد كان ،
+        <a href="https://en.wikipedia.org/wiki/Robert_Piguet" target="_blank"
+          >روبرت بيجيه<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >
+        في الأربعينيات من القرن العشرين ، كان المنزل مملوكًا
+        <a href="img/Robert Piguet Un Prince de la Mode.pdf" target="_blank">
+          لمصمم الأزياء<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >
+        السويسري ، من بين آخرين ، مدرس كريستيان ديور وبيير بالمين وهوبرت دي
+        جيفنشي في باريس.
+        <br />
+        <br />
+        تم امتلاك المنزل منذ القرن الماضي من قبل عائلة
+        <br />
+        Ambrosi de Magistris Verzier
+        <br />
+        وشعارها هو ،
+        <br />
+        "Ad altiora vocamur"
+        <br />
+        ("للأشياء الأعلى التي نطلق عليها")
+        <br />
+        وهو تذكير لأفراد العائلة للانخراط في أشياء أعلى بدلاً من أن يكونوا
+        عالقون في كدح في الحياة اليومية ، ، يكرسون طاقاتهم نحو السعي إلى مكافآت
+        إنسانية وروحية أكثر إثراء
+      </p>
+      <h4 dir="rtl">فيلم وثائقي قصير عن المنزل باللغة الفرنسية</h4>
+      <iframe src="https://www.youtube.com/embed/8qdvmmt-A-o"> </iframe>
+    </div>
+
+    <div id="mandarin" style="display: none">
+      <div class="back-button">
+        <button class="back" type="button" onclick="show('buttons')">
+          <span class="material-icons" style="font-size: xx-large"
+            >arrow_back</span
+          >
+        </button>
+      </div>
+      <p>
+        <a href="img/ACV_GB14c3-010362 GRANGE.jpg" target="_blank"
+          >这座房子<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >出现在<a href="img/ACV_GB14c3-010362.jpg" target="_blank"
+          >最古老的州计划<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >（1620年）中，因此实际上可以追溯到16世纪。
+        <br />
+        <br />
+        后来的计划（<a href="img/ACV_GB-010364.jpg" target="_blank"
+          >1795年<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >）特别提到了这所房子中已有的
+        <a href="img/ACV_GB-010364 FOUR.jpg" target="_blank"
+          >烤箱<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >
+        ，这在当时非常少见，有可能使其成为居住在这些土地上的农村社区的枢纽。
+        <br />
+        <br />
+        在1940年代，这所房子由瑞士时装<a
+          href="img/Robert Piguet Un Prince de la Mode.pdf"
+          target="_blank"
+          >设计师<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >
+        <a href="https://en.wikipedia.org/wiki/Robert_Piguet" target="_blank"
+          >罗伯特·皮格<span class="material-icons" style="font-size: small"
+            >open_in_new</span
+          ></a
+        >（Robert Piguet）拥有，大师是克里斯蒂安·迪奥（Christian
+        Dior），皮埃尔·巴尔曼（Pierre Balmain）和休伯特·纪梵希（Hubert de
+        Givenchy）在巴黎的老师。
+        <br />
+        <br />
+        该房子自上世纪以来一直由Ambrosi de Magistris Verzier家族拥有，其座右铭是
+        “Ad altiora
+        vocamur”（“我们被更高的使命所召唤”），这提醒家庭成员不要被日常生活的苦恼困扰，去积极寻求更富有意义的人类精神生活。
+      </p>
+      <h4>有关房屋的简短纪录片，法语</h4>
+      <iframe src="https://www.youtube.com/embed/8qdvmmt-A-o"> </iframe>
+    </div>
+
+    <script>
+      document.body.onload = show("buttons");
+      function show(param_div_id) {
+        document.getElementById("text_field").innerHTML =
+          document.getElementById(param_div_id).innerHTML;
+      }
+    </script>
+  </body>
 </html>
